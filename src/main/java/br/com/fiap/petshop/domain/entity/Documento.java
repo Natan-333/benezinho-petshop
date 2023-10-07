@@ -5,19 +5,22 @@ import jakarta.persistence.*;
 
 import java.io.Serializable;
 
-
-
+@Entity
+@Table(name = "TB_DOCUMENTO")
 public class Documento implements Serializable {
 
-
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SQ_DOCUMENTO")
+    @Column(name = "ID_DOCUMENTO")
     private Long id;
-
-
+    @Column(name = "NR_DOCUMENTO")
     private String numero;
-
-
-
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @JoinColumn(
+            name = "ID_PESSOA",
+            referencedColumnName = "ID_PESSOA",
+            foreignKey = @ForeignKey(name = "FK_DOCUMENTO_PESSOA")
+    )
     private Pessoa pessoa;
 
     protected Documento() {
