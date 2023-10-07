@@ -20,7 +20,7 @@ public class Telefone {
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(
-            name = "ID_PESSOA",
+            name = "TELEFONE_PESSOA",
             referencedColumnName = "ID_PESSOA",
             foreignKey = @ForeignKey(name = "FK_TELEFONE_PESSOA")
     )

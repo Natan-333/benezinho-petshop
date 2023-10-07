@@ -25,9 +25,9 @@ public class Animal {
     private String nome;
     @Column(name = "SEX_ANIMAL")
     private Sexo sexo;
-    @Column(name = "DT_NSC_ANIMAL")
+    @Column(name = "DT_NASC_ANIMAL")
     private LocalDate nascimento;
-    @Column(name = "RACA_ANIMAL", nullable = false)
+    @Column(name = "RC_ANIMAL", nullable = false)
     private String raca;
 
     @Column(name = "DESC_ANIMAL")
@@ -41,9 +41,9 @@ public class Animal {
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(
-            name = "ID_PESSOA",
+            name = "DONO",
             referencedColumnName = "ID_PESSOA",
-            foreignKey = @ForeignKey(name = "FK_ANIMAL_PESSOA")
+            foreignKey = @ForeignKey(name = "FK_ANIMAL_DONO")
     )
     private Pessoa dono;
 
