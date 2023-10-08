@@ -9,6 +9,9 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 
+@Entity
+@Table(name = "TB_BANHO")
+@DiscriminatorValue("BANHO")
 public class Banho extends Servico{
 
     public Banho() {
