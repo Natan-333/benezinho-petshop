@@ -18,6 +18,7 @@ public class Animal {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SQ_ANIMAL")
+    @SequenceGenerator(name = "SQ_ANIMAL", sequenceName = "SQ_ANIMAL", allocationSize = 1, initialValue = 1)
     @Column(name = "ID_ANIMAL")
     private Long id;
 

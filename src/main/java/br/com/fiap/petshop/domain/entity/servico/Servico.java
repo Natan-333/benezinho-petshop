@@ -15,6 +15,7 @@ public  class Servico {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SQ_SERVICO")
+    @SequenceGenerator(name = "SQ_SERVICO", sequenceName = "SQ_SERVICO", allocationSize = 1, initialValue = 1)
     @Column(name = "ID_SERVICO")
     private Long id;
 

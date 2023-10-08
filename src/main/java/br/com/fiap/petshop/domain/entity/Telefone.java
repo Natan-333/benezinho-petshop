@@ -9,6 +9,7 @@ public class Telefone {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SQ_TELEFONE")
+    @SequenceGenerator(name = "SQ_TELEFONE", sequenceName = "SQ_TELEFONE", allocationSize = 1, initialValue = 1)
     @Column(name = "ID_TELEFONE")
     private Long id;
 

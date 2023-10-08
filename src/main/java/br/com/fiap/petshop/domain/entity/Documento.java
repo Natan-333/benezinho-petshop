@@ -11,6 +11,7 @@ public class Documento implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SQ_DOCUMENTO")
+    @SequenceGenerator(name = "SQ_DOCUMENTO", sequenceName = "SQ_DOCUMENTO", allocationSize = 1, initialValue = 1)
     @Column(name = "ID_DOCUMENTO")
     private Long id;
     @Column(name = "NR_DOCUMENTO")
